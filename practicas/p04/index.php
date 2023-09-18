@@ -119,7 +119,57 @@
             }
             echo "El primer número múltiplo de $numDado obtenido aleatoriamente es: $numEnc";
         }
+        ?>
+        <p>
+            Variante usando do-while
+        </p>
+        <?php
+        if(isset($_GET['numeroEJ3']))
+        {
+            $numDado = $_GET['numeroEJ3'];
+            $numEnc = 0;
 
+            do{
+                $numEnc = rand(0,1000);
+            }while($numEnc % $numDado != 0);//el ciclo sigue asta que el modulo del numero encontrado con el numero obtenido con $_GET sea 0
+            echo "El primer número múltiplo de $numDado obtenido aleatoriamente es: $numEnc";
+        }
+        ?>
+
+    <br><hr>
+
+    <h2>Ejercicio 4</h2>
+    <p>
+        Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’
+        a la ‘z’. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
+        el valor en cada índice. Es decir:
+    </p>
+    <p>
+        [97] => a <br>
+        [98] => b <br>
+        [99] => c <br>
+        ... <br>
+        [122] => z <br>
+    </p>
+    <ul>
+        <li>Crea el arreglo con un ciclo for</li>
+        <li>Lee el arreglo y crea una tabla en XHTML con echo y un ciclo foreach</li>
+    </ul>
+    <?php
+        $abc = array();
+        for($i = 97; $i <= 122; $i++){
+            $abc[$i] = chr($i);
+        }
+        echo '<table border = "1">';
+        echo '<tr><th>Indice</th><th>Valor</th></tr>';
+
+        foreach ($abc as $indice => $valor) {
+            echo '<tr>';
+            echo '<td>' . $indice . '</td>';
+            echo '<td>' . $valor . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
     ?>
 </body>
 </html>
