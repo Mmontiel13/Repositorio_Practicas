@@ -42,5 +42,59 @@
     ?>
     -->
     <br><hr>
+    <h2>Ejercicio 2</h2>
+        <p>
+            Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
+            secuencia compuesta por:
+        </p>
+        <p>Impar, par, impar</p>
+        <p>Por Ejemplo</p>
+        <ul>
+            <li>990, 382, 786</li>
+            <li>422, 361, 473</li>
+            <li>392, 671, 914</li>
+            <li>213, 744, 911</li>
+        </ul>
+        <p>
+            Estos números deben almacenarse en una matriz de Mx3, donde M es el número de filas y
+            3 el número de columnas. Al final muestra el número de iteraciones y la cantidad de
+            números generados:
+        </p>
+        <p>12 números obtenidos en 4 iteraciones</p>
+
+        <form method="post" action="">
+            <input type="submit" name="EJ2" value="Generar Matriz">
+        </form>
+
+        <?php
+            if(isset($_POST['EJ2'])){
+                
+                    $secuencia = false;
+                    $iteraciones = 0;
+                    $matrizIPI = [];
+
+                do{//Ciclo do-while que genera 3 numeros aleatorios asta que la secuencia (Impar, Par, Impar) se cumpla
+                    $num1 = rand(100,999);
+                    $num2 = rand(100,999);
+                    $num3 = rand(100,999);
+    
+                    if($num1 % 2 == 1 && $num2 % 2 == 0 && $num3 % 2 == 1){
+                        $secuencia = true;
+                    }
+                    $matrizIPI[] = [$num1,$num2,$num3];
+                    $iteraciones++;
+                }while(!$secuencia);
+
+                for ($i = 0; $i < count($matrizIPI); $i += 3) {
+                    echo '<p>';
+                    for ($j = $i; $j < $i + 3 && $j < count($matrizIPI); $j++) {
+                        echo '(' . implode(', ', $matrizIPI[$j]) . ') ';
+                    }
+                    echo '</p>';
+                }
+                echo '<p>'.($iteraciones * 3). ' números generados en '.$iteraciones.' iteraciones</p';
+            }
+        ?>
+        <br><hr>
 </body>
 </html>
