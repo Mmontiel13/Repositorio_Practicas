@@ -171,5 +171,46 @@
         }
         echo '</table>';
     ?>
+
+    <br><hr>
+
+    <h2>Ejercicio 5</h2>
+    <p>
+        Usar las variables $edad y $sexo en una instrucción if para identificar una persona de
+        sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
+        bienvenida apropiado. Por ejemplo: <br>
+        Bienvenida, usted está en el rango de edad permitido. <br>
+        En caso contrario, deberá devolverse otro mensaje indicando el error.
+    </p>
+    <ul>
+        <li>
+            Los valores para $edad y $sexo se deben obtener por medio de un formulario en
+            HTML.
+        </li>
+        <li>Utilizar el la Variable Superglobal $_POST (revisar documentación).</li>
+    </ul>
+    
+    <form method="post" action="">
+        <label for="edad">Edad: </label>
+        <input type="number" name="edad">
+        <select id="sexo" name="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+        <input type="submit" value="Verificar">
+    </form>
+    <?php
+    if (isset($_POST['edad']) && isset($_POST['sexo'])) {
+        $edad = intval($_POST['edad']);
+        $sexo = $_POST['sexo'];
+
+        if ($sexo === 'femenino' && $edad >= 18 && $edad <= 35) {
+            echo '<p>Bienvenida, usted está en el rango de edad permitido.</p>';
+        } else {
+            echo '<p>No se pudo acceder no cumple los requisitos.</p>';
+        }
+    }
+    ?>
+    
 </body>
 </html>
