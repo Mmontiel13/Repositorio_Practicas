@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN”
-“http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -190,7 +190,7 @@
         <li>Utilizar el la Variable Superglobal $_POST (revisar documentación).</li>
     </ul>
     
-    <form method="post" action="">
+    <form method="post" action="respuestas.php">
         <label for="edad">Edad: </label>
         <input type="number" name="edad">
         <select id="sexo" name="sexo">
@@ -200,17 +200,104 @@
         <input type="submit" value="Verificar">
     </form>
     <?php
-    if (isset($_POST['edad']) && isset($_POST['sexo'])) {
-        $edad = intval($_POST['edad']);
-        $sexo = $_POST['sexo'];
-
-        if ($sexo === 'femenino' && $edad >= 18 && $edad <= 35) {
-            echo '<p>Bienvenida, usted está en el rango de edad permitido.</p>';
-        } else {
-            echo '<p>No se pudo acceder no cumple los requisitos.</p>';
+        include('funcionesEj5.php');
+        if(isset($_POST['edad']) && isset($_POST['sexo'])){
+            $edad = intval($_POST['edad']);
+            $sexo = $_POST['sexo'];
+            ejercicio5($edad,$sexo);
         }
-    }
     ?>
     
+    <br><hr>
+    <h2>Ejercicio 6</h2>
+    <p>
+        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de
+        una ciudad. Cada vehículo debe ser identificado por:
+    </p>
+    <ul>
+        <li>Matricula</li>
+        <li>Auto</li>
+        <ul>
+            <li>Marca</li>
+            <li>Modelo(año)</li>
+            <li>Tipo (sedan|hachback|camioneta)</li>
+        </ul>
+        <li>Propietario</li>
+        <ul>
+            <li>Nombre</li>
+            <li>Ciudad</li>
+            <li>Direccion</li>
+        </ul>
+    </ul>
+    <p>
+        La matrícula debe tener el siguiente formato LLLNNNN, donde las L pueden ser letras de
+        la A-Z y las N pueden ser números de 0-9. <br>
+        Para hacer esto toma en cuenta las siguientes instrucciones:
+    </p>
+    <ul>
+        <li>Crea en código duro el registro para 15 autos</li>
+        <li>Utiliza un único arreglo, cuya clave de cada registro sea la matricula</li>
+        <li>Lógicamente la matricula no se puede repetir.</li>
+        <li>Los datos del Auto deben ir dentro de un arreglo.</li>
+        <li>Los datos del Propietario deben ir dentro de un arreglo.</li>
+    </ul>
+    
+    <h3>Resgistro de vehiculos</h3>
+    <form method="post" action="">
+        Matricula: <input type="text" name="matricula" maxlength="7" pattern="[A-Z]{3}\d{4}"><br>
+        Marca: <input type="text" name="marca"><br>
+        Modelo(año): <input type="text" name="modelo"><br>
+        <label for="Tipo">Tipo:</label>
+        <select name="tipo">
+            <option value="sedan">sedan</option>
+            <option value="hachback">hachback</option>
+            <option value="camioneta">camioneta</option>
+        </select>
+        <br>
+        Nombre Propietario: <input type="text" name="propietario"><br>
+        Ciudad: <input type="text" name="ciudad"><br>
+        Direccion: <input type="text" name="direccion"><br>
+        <input type="submit" value="enviar"><br>
+    </form>
+    <form method="post" action="respuestas.php">
+        <label for="buscarMatricula">Buscar por Matrícula:</label>
+        <input type="text" name="buscarMatricula" id="buscarMatricula">
+        <input type="submit" name="buscar" value="buscar">
+        <input type="submit" name="mostrarTodos" value="Mostrar Todos los Vehículos">
+        <br>
+    </form>
+    <?php
+        include('funcionesEj6.php');
+        global $parqueVehicular;
+        $parqueVehicular = array();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $matricula = strtoupper($_POST['matricula']);
+            $marca = $_POST['marca'];
+            $modelo = $_POST['modelo'];
+            $tipo = $_POST['tipo'];
+            $propietarioNombre = $_POST['propietario'];
+            $ciudad = $_POST['ciudad'];
+            $direccion = $_POST['direccion'];
+        
+            if (preg_match('/^[A-Z]{3}\d{4}$/', $matricula)) {
+                $auto = array(
+                    'Marca' => $marca,
+                    'Modelo' => $modelo,
+                    'Tipo' => $tipo
+                );
+        
+                $propietario = array(
+                    'Nombre' => $propietarioNombre,
+                    'Ciudad' => $ciudad,
+                    'Direccion' => $direccion
+                );
+        
+                agregarVehiculo($parqueVehicular, $matricula, $auto, $propietario);
+            } else {
+                echo "La matrícula no cumple con el formato requerido (LLLNNNN).";
+            }
+        }
+
+    ?>
 </body>
 </html>
