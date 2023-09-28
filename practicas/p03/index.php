@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN”
-“http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,8 +34,8 @@
     <h2> Ejercicio 2 </h2>
     <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
     <p>
-        $a = “ManejadorSQL”;<br>
-        $b = 'MySQL’;<br>
+        $a = "ManejadorSQL";<br>
+        $b = 'MySQL';<br>
         $c = &$a;<br>
     </p>
     <?php
@@ -170,7 +170,7 @@
     <h2> Ejercicio 6</h2>
     <p>
     Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
-    usando la función var_dump(<datos>).
+    usando la función var_dump(datos).
     Después investiga una función de PHP que permita transformar el valor booleano de $c y $e
     en uno que se pueda mostrar con un echo:
     </p>
@@ -286,5 +286,6 @@
         $idiomaNavegador = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
         echo "Idioma del navegador cliente: $idiomaNavegador <br><br>";
     ?>
+    <p><a href="http://validator.w3.org/check?uri=refer"><img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a></p>
 </body>
 </html>
