@@ -7,13 +7,15 @@
         'message' => 'La consulta falló'
     );
     // SE VERIFICA HABER RECIBIDO EL ID
-    if( isset($_GET['id']) ) {
-        $id = $_GET['id'];
+    if( isset($_POST['id']) ) {
+        $id = $_POST['id'];
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
         $sql = "UPDATE productos SET eliminado=1 WHERE id = {$id}";
         if ( $conexion->query($sql) ) {
-            $data['status'] =  "success";
-            $data['message'] =  "Producto eliminado";
+            $data = array(
+                'status' => 'success',
+                'message' => 'Producto eliminado'
+            );
 		} else {
             $data['message'] = "ERROR: No se ejecuto $sql. " . mysqli_error($conexion);
         }

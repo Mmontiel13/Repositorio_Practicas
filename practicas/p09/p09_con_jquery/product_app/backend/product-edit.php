@@ -5,8 +5,9 @@
     $producto = file_get_contents('php://input');
     $data = array(
         'status'  => 'error',
-        'message' => 'Ya existe un producto con ese nombre'
+        'message' => 'No se pudo actualizar el producto'
     );
+    
     if(!empty($producto)) {
         // SE TRANSFORMA EL STRING DEL JASON A OBJETO
         $jsonOBJ = json_decode($producto);
@@ -16,11 +17,11 @@
         
         if ($result->num_rows == 0) {
             $conexion->set_charset("utf8");
-            $sql = "INSERT INTO productos VALUES (null, '{$jsonOBJ->nombre}', '{$jsonOBJ->marca}', '{$jsonOBJ->modelo}', {$jsonOBJ->precio}, '{$jsonOBJ->detalles}', {$jsonOBJ->unidades}, '{$jsonOBJ->imagen}', 0)";
+            $sql = "UPDATE productos SET nombre = '{$jsonOBJ->nombre}', marca = '{$jsonOBJ->marca}', modelo = '{$jsonOBJ->modelo}', precio = {$jsonOBJ->precio}, detalles = '{$jsonOBJ->detalles}', unidades = {$jsonOBJ->unidades}, imagen = '{$jsonOBJ->imagen}' WHERE id = {$jsonOBJ->id}";
             if($conexion->query($sql)){
                 $data = array(
                     'status' => 'success',
-                    'message' => 'Producto agregado'
+                    'message' => 'Producto actualizado'
                 );
             } else {
                 $data['message'] = "ERROR: No se ejecuto $sql. " . mysqli_error($conexion);
@@ -30,8 +31,10 @@
         $result->free();
         // Cierra la conexion
         $conexion->close();
+
     }
 
     // SE HACE LA CONVERSIÓN DE ARRAY A JSON
     echo json_encode($data, JSON_PRETTY_PRINT);
+    
 ?>
