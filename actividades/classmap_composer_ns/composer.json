@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "classmap" : [
+            "app/Webtechnologies/Models",
+            "app/Webtechnologies/Views",
+            "app/Webtechnologies/Controllers"
+        ]
+    }
+}

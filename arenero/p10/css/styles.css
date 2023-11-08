@@ -1,0 +1,24 @@
+/* Fondo verde para el input validación correcta */
+.valid {
+    background-color: #8CFF8C; 
+}
+
+/* fondo para el input para validación incorrecta */
+.invalid {
+    background-color: #FF8C8C;
+}
+
+/*estilo para el mensaje de validacion incorrecta*/
+.validation-message {
+    color: white;
+    font-size: 14px;
+    display: none;
+    background: rgba(204, 21, 21, 0.338)
+}
+
+.validation-exception {
+    color: white;
+    font-size: 14px;
+    display: none;
+    background: rgba(58, 204, 21, 0.338)
+}
