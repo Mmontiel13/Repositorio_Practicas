@@ -1,0 +1,125 @@
+<CatalogoVOD>
+        <cuenta>
+            <correo>marcmontiel98@gmail.com</correo>
+            <perfiles>
+                <perfil>
+                    <usuario>Marco</usuario>
+                    <idioma>Español</idioma>
+                </perfil>
+                <perfil>
+                    <usuario>Manolo</usuario>
+                    <idioma>Español</idioma>
+                </perfil>
+            </perfiles>
+
+
+            <!-- -->
+            <contenido>
+                <peliculas>
+                    <!-- Genero 1 -->
+                    <genero>
+                        <nombre>Caricaturas</nombre>
+                        <!-- 4 peliculas por genero -->
+                        <!-- 1 -->
+                        <titulo>
+                            <nombre>Shrek</nombre>
+                            <duracion>1h 30m</duracion>
+                        </titulo>
+                        <!-- 2 -->
+                        <titulo>
+                            <nombre>Shrek 2</nombre>
+                            <duracion>1h 45m</duracion>
+                        </titulo>
+                        <!-- 3 -->
+                        <titulo>
+                            <nombre>Shrek Tercero</nombre>
+                            <duracion>1h 33m</duracion>
+                        </titulo>
+                        <!-- 4 -->
+                        <titulo>
+                            <nombre>Shrek para siempre</nombre>
+                            <duracion>1h 33m</duracion>
+                        </titulo>
+                    </genero>
+                    <!-- Genero 2 -->
+                    <genero>
+                        <!-- 4 peliculas por genero -->
+                        <nombre>Ciencia ficcion</nombre>
+                        <!-- 1 -->
+                        <titulo>
+                            <nombre>The Avengers: los Vengadores</nombre>
+                            <duracion>2h 23m</duracion>
+                        </titulo>
+                        <!-- 2 -->
+                        <titulo>
+                            <nombre>Avengers: era de Ultrón</nombre>
+                            <duracion>2h 21m</duracion>
+                        </titulo>
+                        <!-- 3 -->
+                        <titulo>
+                            <nombre>Avengers: Endgame</nombre>
+                            <duracion>3h 2m</duracion>
+                        </titulo>
+                        <!-- 4 -->
+                        <titulo>
+                            <nombre>Avengers: Infinity War</nombre>
+                            <duracion>2h 29m</duracion>
+                        </titulo>
+                    </genero>
+                </peliculas>
+                <!-- Programas -->
+                <programas>
+                    <!-- Genero 1 -->
+                    <genero>
+                        <nombre>Noticias</nombre>
+                        <!-- 4 peliculas por genero -->
+                        <!-- 1 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 2 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 3 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 4 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                    </genero>
+                    <!-- Genero 2 -->
+                    <genero>
+                        <!-- 4 peliculas por genero -->
+                        <nombre>Comedia</nombre>
+                        <!-- 1 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 2 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 3 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                        <!-- 4 -->
+                        <titulo>
+                            <nombre></nombre>
+                            <duracion></duracion>
+                        </titulo>
+                    </genero>
+                </programas>
+            </contenido>
+        </cuenta>
+</CatalogoVOD>
