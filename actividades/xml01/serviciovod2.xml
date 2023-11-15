@@ -1,0 +1,62 @@
+<CatalogoVOD>
+        <cuenta correo="marcmontiel98@gmail.com">
+            <perfiles>
+                <perfil usuario="Marco" idioma="Español"></perfil>
+                <perfil usuario="Manolo" idioma="Español"></perfil>
+            </perfiles>
+            <!-- -->
+            <contenido>
+                <peliculas>
+                    <!-- Genero 1 -->
+                    <genero nombre="Caricaturas">
+                        <!-- 4 peliculas por genero -->
+                        <!-- 1 -->
+                        <titulo nombre="Shrek" duracion="1h 30m"></titulo>
+                        <!-- 2 -->
+                        <titulo nombre="Shrek 2" duracion="1h 45m"></titulo>
+                        <!-- 3 -->
+                        <titulo nombre="Shrek Tercero" duracion="1h 33m"></titulo>
+                        <!-- 4 -->
+                        <titulo nombre="Shrek para siempre" duracion="1h 33m"></titulo>
+                    </genero>
+                    <!-- Genero 2 -->
+                    <genero nombre="Ciencia Ficcion">
+                        <!-- 4 peliculas por genero -->
+                         <!-- Película 1 -->
+                        <titulo nombre="The Avengers: los Vengadores" duracion="2h 23m"></titulo>
+                        <!-- Película 2 -->
+                        <titulo nombre="Avengers: era de Ultrón" duracion="2h 21m"></titulo>
+                        <!-- Película 3 -->
+                        <titulo nombre="Avengers: Endgame" duracion="3h 2m"></titulo>
+                        <!-- Película 4 -->
+                        <titulo nombre="Avengers: Infinity War" duracion="2h 29m"></titulo>
+                    </genero>
+                </peliculas>
+                <!-- Programas -->
+                <programas>
+                    <!-- Genero 1 -->
+                    <genero nombre="Noticias">
+                        <!-- Programa 1 -->
+                        <titulo nombre="Noticias del Mundo" duracion="60 minutos"></titulo>
+                        <!-- Programa 2 -->
+                        <titulo nombre="Actualidad Internacional" duracion="45 minutos"></titulo>
+                        <!-- Programa 3 -->
+                        <titulo duracion="30 minutos"></titulo>
+                        <!-- Programa 4 -->
+                        <titulo nombre="Resumen Semanal" duracion="90 minutos"></titulo>
+                    </genero>
+                    <!-- Genero 2 -->
+                    <genero nombre="Comedia">
+                        <!-- Programa 1 -->
+                        <titulo nombre="Locuras en el Escenario" duracion="30 minutos"></titulo>
+                        <!-- Programa 2 -->
+                        <titulo nombre="Risas Garantizadas" duracion="45 minutos"></titulo>
+                        <!-- Programa 3 -->
+                        <titulo nombre="Comediantes de Stand-Up" duracion="60 minutos"></titulo>
+                        <!-- Programa 4 -->
+                        <titulo nombre="Comedia en Vivo" duracion="75 minutos"></titulo>
+                    </genero>
+                </programas>
+            </contenido>
+        </cuenta>
+</CatalogoVOD>

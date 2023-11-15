@@ -75,23 +75,22 @@
                         <!-- 4 peliculas por genero -->
                         <!-- 1 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Noticias del Mundo</nombre>
+                            <duracion>60 minutos</duracion>
                         </titulo>
-                        <!-- 2 -->
+                        <!-- Programa 2 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Actualidad Internacional</nombre>
+                            <duracion>45 minutos</duracion>
                         </titulo>
-                        <!-- 3 -->
+                        <!-- Programa 3 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <duracion>30 minutos</duracion>
                         </titulo>
-                        <!-- 4 -->
+                        <!-- Programa 4 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Resumen Semanal</nombre>
+                            <duracion>90 minutos</duracion>
                         </titulo>
                     </genero>
                     <!-- Genero 2 -->
@@ -100,23 +99,23 @@
                         <nombre>Comedia</nombre>
                         <!-- 1 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Locuras en el Escenario</nombre>
+                            <duracion>30 minutos</duracion>
                         </titulo>
-                        <!-- 2 -->
+                        <!-- Programa 2 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Risas Garantizadas</nombre>
+                            <duracion>45 minutos</duracion>
                         </titulo>
-                        <!-- 3 -->
+                        <!-- Programa 3 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Comediantes de Stand-Up</nombre>
+                            <duracion>60 minutos</duracion>
                         </titulo>
-                        <!-- 4 -->
+                        <!-- Programa 4 -->
                         <titulo>
-                            <nombre></nombre>
-                            <duracion></duracion>
+                            <nombre>Comedia en Vivo</nombre>
+                            <duracion>75 minutos</duracion>
                         </titulo>
                     </genero>
                 </programas>
