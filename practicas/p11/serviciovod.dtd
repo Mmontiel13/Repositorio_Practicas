@@ -1,0 +1,17 @@
+<!ELEMENT CatalogoVOD (cuenta?, contenido?)>
+
+<!ELEMENT cuenta (perfiles?)>
+<!ATTLIST cuenta correo CDATA #REQUIRED>
+<!ELEMENT perfiles (perfil*)>
+<!ATTLIST perfil usuario CDATA #IMPLIED>
+<!ATTLIST perfil idioma CDATA #IMPLIED>
+<!ELEMENT perfil EMPTY>
+
+
+<!ELEMENT contenido (peliculas*, programas*)>
+<!ELEMENT peliculas (genero+)>
+<!ELEMENT programas (genero+)>
+<!ELEMENT genero (titulo*)>
+<!ATTLIST genero nombre CDATA #IMPLIED>
+<!ELEMENT titulo (#PCDATA)>
+<!ATTLIST titulo duracion CDATA #IMPLIED>

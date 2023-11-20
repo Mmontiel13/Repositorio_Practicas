@@ -1,0 +1,8 @@
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="202138975" visitas="14" puntos="140">
+        <nombre>Marco Montiel</nombre>
+        <correo>marcmontiel98@gmail.com</correo>
+        <telefono tipo="movil">2212837392</telefono>
+    </tarjeta>
+</cinefanatico>
