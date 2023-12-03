@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tw:Spotify xmlns:tw="http://tecnologiasweb.com.mx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="spotify_ns.xsd"
+    version="1.0">
+    <tw:Cuenta id="001" plan="Free">
+        <tw:nombre>John Wick</tw:nombre>
+        <tw:correo>john011@gmail.com</tw:correo>
+        <tw:telefono tipo="casa">000 123 4567</tw:telefono>
+    </tw:Cuenta>
+    <tw:Cuenta id="002" plan="Familiar" fechaIni="2022-03-01" fechaFin="2023-03-01">
+        <tw:nombre>Trinity</tw:nombre>
+        <tw:correo>trinity007@gmail.com</tw:correo>
+    </tw:Cuenta>
+</tw:Spotify>

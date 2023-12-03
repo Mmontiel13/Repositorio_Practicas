@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<CatalogoVOD>
+    <cuenta correo="marcmontiel98@gmail.com">
+        <perfiles>
+            <perfil usuario="Marco Montiel" idioma="English"/>
+            <perfil usuario="Jean Paul" idioma="English"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Ciencia Ficcion">
+                <titulo duracion="02:17:00">VALERIAN Y LA CIUDAD DE LOS MIL PLANETAS.</titulo>
+                <titulo duracion="02:47:00">Blade Runner 2049</titulo>
+            </genero>
+            <genero nombre="Animacion">
+                <titulo duracion="02:20:00">Spider-Man: A Través del Spider-Verso</titulo>
+                <titulo duracion="01:31:00">Monster House</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Comedia">
+                <titulo duracion="00:40:00">Malcom el de en medio</titulo>
+                <titulo duracion="00:40:00">The Big Bang Theory</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="00:43:00">Doctor House</titulo>
+                <titulo duracion="00:40:00">The Good Doctor</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>

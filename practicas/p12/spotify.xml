@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="spotify_v2.xsd" version="1.0">
+    <Cuenta id="001" plan="Free">
+        <nombre>John Wick</nombre>
+        <correo>john011@gmail.com</correo>
+        <telefono tipo="casa">000 123 4567</telefono>
+    </Cuenta>
+    <Cuenta id="002" plan="Familiar" fechaIni="2022-03-01" fechaFin="2023-03-01">
+        <nombre>Trinity</nombre>
+        <correo>trinity007@gmail.com</correo>
+    </Cuenta>
+</Spotify>
