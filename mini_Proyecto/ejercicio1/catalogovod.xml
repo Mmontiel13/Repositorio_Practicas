@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vod:CatalogoVOD Version="2.0"
+    xmlns:vod="http://starfire.com/vod"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://starfire.com/vod serviciovod_ns.xsd">
+    <vod:cuenta correo="tony.stark@gmail.com">
+        <vod:perfiles>
+            <vod:perfil usuario="Robert Downey Jr." idioma="English">
+                <vod:peliculas region="MEX">
+                    <vod:genero nombre="Comedia">
+                        <vod:titulo duracion="01:27:00">Besos de azúcar</vod:titulo>
+                        <vod:titulo duracion="01:40:00">No Manches Frida</vod:titulo>
+                    </vod:genero>
+                    <vod:genero nombre="Acción">
+                        <vod:titulo duracion="02:01:00">Sicario</vod:titulo>
+                        <vod:titulo duracion="01:47:00">Una película de policias</vod:titulo>
+                    </vod:genero>
+                </vod:peliculas>
+                <vod:series region="MEX">
+                    <vod:genero nombre="Acción">
+                        <vod:titulo duracion="00:45:00">Die Hard</vod:titulo>
+                        <vod:titulo duracion="00:50:00">Mad Max: Fury Road</vod:titulo>
+                    </vod:genero>
+                    <vod:genero nombre="Ciencia Ficción">
+                        <vod:titulo duracion="00:55:00">Blade Runner</vod:titulo>
+                        <vod:titulo duracion="01:30:00">The Matrix</vod:titulo>
+                    </vod:genero>
+                </vod:series>
+            </vod:perfil>
+            <vod:perfil usuario="Chris Evans" idioma="English">
+                <vod:peliculas region="MEX">
+                    <vod:genero nombre="Drama">
+                        <vod:titulo duracion="02:15:00">Bajo el mismo cielo</vod:titulo>
+                        <vod:titulo duracion="01:55:00">Laberinto de emociones</vod:titulo>
+                    </vod:genero>
+                    <vod:genero nombre="Romance">
+                        <vod:titulo duracion="02:10:00">Amor en el viento</vod:titulo>
+                        <vod:titulo duracion="01:50:00">Pasión sin fronteras</vod:titulo>
+                    </vod:genero>
+                </vod:peliculas>
+                <vod:series region="USA">
+                    <vod:genero nombre="Drama">
+                        <vod:titulo duracion="00:50:00">Breaking Bad</vod:titulo>
+                        <vod:titulo duracion="00:45:00">The Crown</vod:titulo>
+                    </vod:genero>
+                    <vod:genero nombre="Ciencia Ficción">
+                        <vod:titulo duracion="00:42:00">Stranger Things</vod:titulo>
+                        <vod:titulo duracion="00:55:00">Westworld</vod:titulo>
+                    </vod:genero>
+                </vod:series>
+            </vod:perfil>
+        </vod:perfiles>
+    </vod:cuenta>
+    <vod:contenido>
+        <vod:peliculas region="MEX">
+            <vod:genero nombre="Super Héroes">
+                <vod:titulo duracion="02:04:00">Capitán América: El primer vengador.</vod:titulo>
+                <vod:titulo duracion="02:06:00">Iron Man: el hombre de hierro</vod:titulo>
+            </vod:genero>
+            <vod:genero nombre="Terror">
+                <vod:titulo duracion="01:51:00">Halloween: la noche final</vod:titulo>
+                <vod:titulo duracion="01:42:00">El teléfono negro</vod:titulo>
+            </vod:genero>
+        </vod:peliculas>
+        <vod:series region="USA">
+            <vod:genero nombre="Comedia">
+                <vod:titulo duracion="00:40:00">Friends</vod:titulo>
+                <vod:titulo duracion="00:40:00">The Big Bang Theory</vod:titulo>
+            </vod:genero>
+            <vod:genero nombre="Drama Criminal">
+                <vod:titulo duracion="0s0:45:00">Criminal Minds</vod:titulo>
+                <vod:titulo duracion="00:50:00">Dahmer</vod:titulo>
+            </vod:genero>
+        </vod:series>
+    </vod:contenido>
+</vod:CatalogoVOD>
