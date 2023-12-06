@@ -11,15 +11,15 @@ require_once __DIR__ . '/../DataBase.php';
                 'message' => 'La consulta falló'
             );
             // SE VERIFICA HABER RECIBIDO EL ID
-            if( isset($jsonOBJ->id) ) {
+            if( isset($jsonOBJ->ID_Cuenta) ) {
                 // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-                $sql =  "UPDATE productos SET nombre='{$jsonOBJ->nombre}', marca='{$jsonOBJ->marca}',";
-                $sql .= "modelo='{$jsonOBJ->modelo}', precio={$jsonOBJ->precio}, detalles='{$jsonOBJ->detalles}',"; 
-                $sql .= "unidades={$jsonOBJ->unidades}, imagen='{$jsonOBJ->imagen}' WHERE id={$jsonOBJ->id}";
+                $sql =  "UPDATE contenido SET tipo='{$jsonOBJ->tipo}', region='{$jsonOBJ->region}',";
+                $sql .= "genero='{$jsonOBJ->genero}', titulo={$jsonOBJ->titulo}, duracion='{$jsonOBJ->duracion}',"; 
+                $sql .= "ID_Cuenta={$jsonOBJ->ID_Cuenta} WHERE ID_Contenido={$jsonOBJ->ID_Contenido}";
                 $this->conexion->set_charset("utf8");
                 if ( $this->conexion->query($sql) ) {
                     $this->response['status'] =  "success";
-                    $this->response['message'] =  "Producto actualizado";
+                    $this->response['message'] =  "Contenido actualizado";
                 } else {
                     $this->response['message'] = "ERROR: No se ejecuto $sql. " . mysqli_error($this->conexion);
                 }
