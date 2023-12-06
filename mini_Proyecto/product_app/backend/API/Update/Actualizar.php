@@ -11,11 +11,11 @@ require_once __DIR__ . '/../DataBase.php';
                 'message' => 'La consulta falló'
             );
             // SE VERIFICA HABER RECIBIDO EL ID
-            if( isset($jsonOBJ->ID_Cuenta) ) {
+            if( isset($jsonOBJ->id) ) {
                 // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-                $sql =  "UPDATE contenido SET tipo='{$jsonOBJ->tipo}', region='{$jsonOBJ->region}',";
-                $sql .= "genero='{$jsonOBJ->genero}', titulo={$jsonOBJ->titulo}, duracion='{$jsonOBJ->duracion}',"; 
-                $sql .= "ID_Cuenta={$jsonOBJ->ID_Cuenta} WHERE ID_Contenido={$jsonOBJ->ID_Contenido}";
+                $sql = "UPDATE contenido SET titulo='{$jsonOBJ->nombre}', tipo='{$jsonOBJ->tipo}', ";
+                $sql .= "region='{$jsonOBJ->region}', genero='{$jsonOBJ->genero}', duracion='{$jsonOBJ->duracion}', ";
+                $sql .= "ID_Cuenta={$jsonOBJ->ID_Cuenta} WHERE ID_Contenido={$jsonOBJ->id}";
                 $this->conexion->set_charset("utf8");
                 if ( $this->conexion->query($sql) ) {
                     $this->response['status'] =  "success";

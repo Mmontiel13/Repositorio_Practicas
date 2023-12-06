@@ -1,4 +1,4 @@
-<?php   
+<?php
 namespace BACKEND\API\Read;
 use BACKEND\API\DataBase;
 require_once __DIR__ . '/../DataBase.php';
@@ -30,7 +30,7 @@ require_once __DIR__ . '/../DataBase.php';
             // SE VERIFICA HABER RECIBIDO EL ID
             if( isset($search) ) {
                 // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-                $sql = "SELECT * FROM contenido WHERE (id = '{$search}' OR tipo LIKE '%{$search}%' OR titulo LIKE '%{$search}%' OR region LIKE '%{$search}%' OR genero LIKE '%{$search}%') AND eliminado = 0";
+                $sql = "SELECT * FROM contenido WHERE (ID_Contenido = '{$search}' OR tipo LIKE '%{$search}%' OR titulo LIKE '%{$search}%' OR region LIKE '%{$search}%' OR genero LIKE '%{$search}%') AND eliminado = 0";
                 if ( $result = $this->conexion->query($sql) ) {
                     // SE OBTIENEN LOS RESULTADOS
                     $rows = $result->fetch_all(MYSQLI_ASSOC);
@@ -54,7 +54,7 @@ require_once __DIR__ . '/../DataBase.php';
         public function single($id) {
             if( isset($id) ) {
                 // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-                if ( $result = $this->conexion->query("SELECT * FROM contenido WHERE id = {$id}") ) {
+                if ( $result = $this->conexion->query("SELECT * FROM contenido WHERE ID_Contenido = {$id}") ) {
                     // SE OBTIENEN LOS RESULTADOS
                     $row = $result->fetch_assoc();
         

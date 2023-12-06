@@ -8,16 +8,17 @@ require_once __DIR__ . '/../DataBase.php';
             // SE OBTIENE LA INFORMACIÓN DEL PRODUCTO ENVIADA POR EL CLIENTE
             $this->response = array(
                 'status'  => 'error',
-                'message' => 'Hay un contenido con ese nombre'
+                'message' => 'Ya existe un producto con ese nombre'
             );
             if(isset($jsonOBJ->nombre)) {
                 // SE ASUME QUE LOS DATOS YA FUERON VALIDADOS ANTES DE ENVIARSE
-                $sql = "SELECT * FROM contenido WHERE titulo = '{$jsonOBJ->titulo}' AND eliminado = 0";
+                $sql = "SELECT * FROM contenido WHERE titulo = '{$jsonOBJ->nombre}' AND eliminado = 0";
                 $result = $this->conexion->query($sql);
                 
                 if ($result->num_rows == 0) {
                     $this->conexion->set_charset("utf8");
-                    $sql = "INSERT INTO contenido VALUES (null, '{$jsonOBJ->tipo}', '{$jsonOBJ->region}', '{$jsonOBJ->genero}', {$jsonOBJ->titulo}, '{$jsonOBJ->duracion}', 0, '{$jsonOBJ->ID_Cuenta}')";
+                    $sql = "INSERT INTO contenido VALUES (null,'{$jsonOBJ->tipo}','{$jsonOBJ->region}','{$jsonOBJ->genero}','{$jsonOBJ->nombre}','{$jsonOBJ->duracion}',0,'{$jsonOBJ->ID_Cuenta}'
+                    )";
                     if($this->conexion->query($sql)){
                         $this->response['status'] =  "success";
                         $this->response['message'] =  "Contenido agregado";

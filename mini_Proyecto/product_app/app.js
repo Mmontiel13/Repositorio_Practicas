@@ -1,7 +1,7 @@
 // JSON BASE A MOSTRAR EN FORMULARIO
 var baseJSON = {
     "tipo": "pelicula",
-    "region": "mx",
+    "region": "USA",
     "genero": "comedia",
     "duracion": "140",
     "ID_Cuenta": "1"
@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     let JsonString = JSON.stringify(baseJSON,null,2);
     $('#description').val(JsonString);
-    $('#content-result').hide();
+    $('#product-result').hide();
     listarContenido();
 
     function listarContenido() {
@@ -20,25 +20,28 @@ $(document).ready(function(){
             url: './backend/content-list.php',
             type: 'GET',
             success: function(response) {
-                const contenido = JSON.parse(response);
-                if(Object.keys(contenido).length > 0) {
+                // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+                const conenidos = JSON.parse(response);
+            
+                // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
+                if(Object.keys(conenidos).length > 0) {
+                    // SE CREA UNA PLANTILLA PARA CREAR LAS FILAS A INSERTAR EN EL DOCUMENTO HTML
                     let template = '';
 
-                    contenido.forEach(contenido => {
+                    conenidos.forEach(contenido => {
+                        // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                         let descripcion = '';
                         descripcion += '<li>tipo: '+contenido.tipo+'</li>';
                         descripcion += '<li>region: '+contenido.region+'</li>';
                         descripcion += '<li>genero: '+contenido.genero+'</li>';
                         descripcion += '<li>duracion: '+contenido.duracion+'</li>';
                         descripcion += '<li>ID_Cuenta: '+contenido.ID_Cuenta+'</li>';
+                    
                         template += `
                             <tr productId="${contenido.ID_Contenido}">
                                 <td>${contenido.ID_Contenido}</td>
                                 <td><a href="#" class="product-item">${contenido.titulo}</a></td>
-                                <td>${contenido.region}</td>
-                                <td>${contenido.genero}</td>
-                                <td>${contenido.tipo}</td>
-                                <td>${contenido.duracion} minutos</td>
+                                <td><ul>${descripcion}</ul></td>
                                 <td>
                                     <button class="product-delete btn btn-danger">
                                         Eliminar
@@ -47,7 +50,8 @@ $(document).ready(function(){
                             </tr>
                         `;
                     });
-                    $('#contenidos').html(template);
+                    // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
+                    $('#products').html(template);
                 }
             }
         });
@@ -63,15 +67,15 @@ $(document).ready(function(){
                 success: function (response) {
                     if(!response.error) {
                         // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-                        const productos = JSON.parse(response);
+                        const contenidos = JSON.parse(response);
                         
                         // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
-                        if(Object.keys(productos).length > 0) {
+                        if(Object.keys(contenidos).length > 0) {
                             // SE CREA UNA PLANTILLA PARA CREAR LAS FILAS A INSERTAR EN EL DOCUMENTO HTML
                             let template = '';
                             let template_bar = '';
 
-                            productos.forEach(producto => {
+                            contenidos.forEach(contenido => {
                                 // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                                 let descripcion = '';
                                 descripcion += '<li>tipo: '+contenido.tipo+'</li>';
@@ -79,14 +83,12 @@ $(document).ready(function(){
                                 descripcion += '<li>genero: '+contenido.genero+'</li>';
                                 descripcion += '<li>duracion: '+contenido.duracion+'</li>';
                                 descripcion += '<li>ID_Cuenta: '+contenido.ID_Cuenta+'</li>';
+                            
                                 template += `
                                     <tr productId="${contenido.ID_Contenido}">
                                         <td>${contenido.ID_Contenido}</td>
                                         <td><a href="#" class="product-item">${contenido.titulo}</a></td>
-                                        <td>${contenido.region}</td>
-                                        <td>${contenido.genero}</td>
-                                        <td>${contenido.tipo}</td>
-                                        <td>${contenido.duracion} minutos</td>
+                                        <td><ul>${descripcion}</ul></td>
                                         <td>
                                             <button class="product-delete btn btn-danger">
                                                 Eliminar
@@ -117,9 +119,12 @@ $(document).ready(function(){
 
     $('#product-form').submit(e => {
         e.preventDefault();
+
+        // SE CONVIERTE EL JSON DE STRING A OBJETO
         let postData = JSON.parse( $('#description').val() );
-        postData['name'] = $('#name').val();
-        postData['ID_Contenido'] = $('#contentId').val();
+        // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
+        postData['nombre'] = $('#name').val();
+        postData['id'] = $('#productId').val();
 
         /**
          * AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
@@ -130,7 +135,9 @@ $(document).ready(function(){
         
         $.post(url, postData, (response) => {
             console.log(response);
+            // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
             let respuesta = JSON.parse(response);
+            // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
             let template_bar = '';
             template_bar += `
                         <li style="list-style: none;">status: ${respuesta.status}</li>
@@ -153,7 +160,7 @@ $(document).ready(function(){
     $(document).on('click', '.product-delete', (e) => {
         if(confirm('¿Realmente deseas eliminar el producto?')) {
             const element = $(this)[0].activeElement.parentElement.parentElement;
-            const id = $(element).attr('contentId');
+            const id = $(element).attr('productId');
             $.post('./backend/content-delete.php', {id}, (response) => {
                 $('#product-result').hide();
                 listarContenido();
@@ -163,14 +170,14 @@ $(document).ready(function(){
 
     $(document).on('click', '.product-item', (e) => {
         const element = $(this)[0].activeElement.parentElement.parentElement;
-        const id = $(element).attr('contentId');
+        const id = $(element).attr('productId');
         $.post('./backend/content-single.php', {id}, (response) => {
             // SE CONVIERTE A OBJETO EL JSON OBTENIDO
             let contenido = JSON.parse(response);
             // SE INSERTAN LOS DATOS ESPECIALES EN LOS CAMPOS CORRESPONDIENTES
             $('#name').val(contenido.titulo);
             // EL ID SE INSERTA EN UN CAMPO OCULTO PARA USARLO DESPUÉS PARA LA ACTUALIZACIÓN
-            $('#contentId').val(contenido.ID_Contenido);
+            $('#productId').val(contenido.ID_Contenido);
             // SE ELIMINA nombre, eliminado E id PARA PODER MOSTRAR EL JSON EN EL <textarea>
             delete(contenido.titulo);
             delete(contenido.eliminado);
