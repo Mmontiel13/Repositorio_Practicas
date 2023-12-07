@@ -12,7 +12,7 @@ abstract class DataBase {
         $this->conexion = @mysqli_connect(
             'localhost',
             'root',
-            '130803',
+            '2808',
             $database
         );
         if(!$this->conexion) {
